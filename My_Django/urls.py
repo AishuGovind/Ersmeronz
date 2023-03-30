@@ -29,5 +29,5 @@ urlpatterns = [
     path("styleex/", views.style),
     path("home/", views.home, name="home"),
     path("addData/", views.addData, name="addData"),
-    path("updateData/", views.updateData, name="updteData")
+    path("updateData/", views.updateData)
 ]
