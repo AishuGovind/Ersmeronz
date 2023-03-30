@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Application Form</title>
+    </head>
+    <body>
+        {% block content %}
+            <form action="/result">
+                Name <input type="text" name="name" ><br>
+                Age <input type="int" name="age" ><br>
+                Birth Place <input type="text" name ="bplace" ><br>
+                <input type="submit" value="Submit">
+            </form>
+        {% endblock %}
+    </body>
+</html>
