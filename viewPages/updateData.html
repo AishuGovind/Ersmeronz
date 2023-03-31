@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Update Data</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+    </head>
+    <body>
+        <div class="conatiner-fluid">
+            <div style="margin-top: 100px;" class="row">
+                <div class="col-md-6">
+                    <h1 class="top-header text-primary text-center">Update the Registration Form</h1>
+                    <form action="/updateData/{{ndata.id}}/" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            Name: <input type="text" name="name" value={{ndata.Name}} class="form-contol">
+                        </div>
+                        <div class="form-group">
+                            Age: <input type="int" name="age" value="{{ndata.Age}}" class="form-contol">
+                        </div>
+                        <div class="form-group">
+                            Contact Number: <input type="int" name="contact" value="{{ndata.Contact_number}}" class="form-contol">
+                        </div>
+                        <div class="form-group">
+                            Email ID: <input type="text" name="email" value="{{ndata.Email}}" class="form-contol">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Update" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

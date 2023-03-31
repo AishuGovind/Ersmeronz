@@ -53,6 +53,27 @@ def addData(request):
         return redirect('home')
     return render(request, 'home.html')
 
-def updateData(request):
+def updateData(request, id):
 
-    return render (request, 'update.html')
+    newdata = tabledata.objects.get(id=id)
+    
+    if request.method == 'POST':
+        name = request.POST['name']
+        age = request.POST['age']
+        contact = request.POST['contact']
+        email = request.POST['email']
+
+      
+        newdata.Name = name
+        newdata.Age = age
+        newdata.Contact_number = contact
+        newdata.Email = email
+        newdata.save()
+        return redirect('home')
+
+    return render (request, 'updateData.html', {'ndata': newdata})
+
+def deleteData(request, id):
+    newdata = tabledata.objects.get(id=id)
+    newdata.delete()
+    return redirect('home')
